@@ -1,0 +1,30 @@
+INFO - sacred_ann_fc2_representation - Running command 'my_experiment'
+INFO - sacred_ann_fc2_representation - Started run with ID "55"
+loaded dataset ../../data/training/2018-01-18T17:57:00_representation_MT_15min_bess.npy
+training data has shape (26400, 17) -> (26400, 96) ; mean 0.007270321249961853 var 0.22868464887142181
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_1 (Dense)              (None, 96)                1728      
+_________________________________________________________________
+dense_2 (Dense)              (None, 64)                6208      
+_________________________________________________________________
+dense_3 (Dense)              (None, 64)                4160      
+_________________________________________________________________
+dense_4 (Dense)              (None, 64)                4160      
+_________________________________________________________________
+dense_5 (Dense)              (None, 96)                6240      
+=================================================================
+Total params: 22,496
+Trainable params: 22,496
+Non-trainable params: 0
+_________________________________________________________________
+None
+2018-01-21 03:19:40.150431: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-01-21 03:19:41.523256: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.7085
+pciBusID: 0000:03:00.0
+totalMemory: 7.92GiB freeMemory: 7.83GiB
+2018-01-21 03:19:41.523281: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:03:00.0, compute capability: 6.1)
+INFO - sacred_ann_fc2_representation - Result: 0.05227239802479744
+INFO - sacred_ann_fc2_representation - Completed after 0:04:17

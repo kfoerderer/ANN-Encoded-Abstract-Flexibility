@@ -1,0 +1,39 @@
+INFO - sacred_cnn_fc_repair - Running command 'my_experiment'
+INFO - sacred_cnn_fc_repair - Started run with ID "14"
+loaded dataset ../../data/training/2018-01-11T19:08:00_repair_15min_chp.npy
+training data has shape (47021, 101) -> (47021, 96) ; mean -0.29230865836143494 var 0.4168094992637634
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            (None, 101)          0                                            
+__________________________________________________________________________________________________
+reshape_1 (Reshape)             (None, 101, 1)       0           input_1[0][0]                    
+__________________________________________________________________________________________________
+lambda_2 (Lambda)               (None, 96, 1)        0           reshape_1[0][0]                  
+__________________________________________________________________________________________________
+conv1d_1 (Conv1D)               (None, 92, 32)       192         lambda_2[0][0]                   
+__________________________________________________________________________________________________
+flatten_1 (Flatten)             (None, 2944)         0           conv1d_1[0][0]                   
+__________________________________________________________________________________________________
+lambda_1 (Lambda)               (None, 5)            0           reshape_1[0][0]                  
+__________________________________________________________________________________________________
+concatenate_1 (Concatenate)     (None, 2949)         0           flatten_1[0][0]                  
+                                                                 lambda_1[0][0]                   
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 128)          377600      concatenate_1[0][0]              
+__________________________________________________________________________________________________
+dense_2 (Dense)                 (None, 96)           12384       dense_1[0][0]                    
+==================================================================================================
+Total params: 390,176
+Trainable params: 390,176
+Non-trainable params: 0
+__________________________________________________________________________________________________
+None
+2018-01-12 03:50:19.786873: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-01-12 03:50:21.198496: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.7085
+pciBusID: 0000:03:00.0
+totalMemory: 7.92GiB freeMemory: 7.83GiB
+2018-01-12 03:50:21.198538: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:03:00.0, compute capability: 6.1)
+INFO - sacred_cnn_fc_repair - Result: 0.24912667274475098
+INFO - sacred_cnn_fc_repair - Completed after 0:04:37

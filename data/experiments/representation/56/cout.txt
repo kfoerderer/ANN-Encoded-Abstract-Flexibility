@@ -1,0 +1,48 @@
+INFO - sacred_cnn_pool1_representation - Running command 'my_experiment'
+INFO - sacred_cnn_pool1_representation - Started run with ID "56"
+loaded dataset ../../data/training/2018-01-18T17:57:00_representation_MT_15min_bess.npy
+training data has shape (26400, 17) -> (26400, 96) ; mean 0.007270321249961853 var 0.22868464887142181
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         (None, 17)                0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 96)                1728      
+_________________________________________________________________
+reshape_1 (Reshape)          (None, 96, 1)             0         
+_________________________________________________________________
+conv1d_1 (Conv1D)            (None, 96, 48)            288       
+_________________________________________________________________
+max_pooling1d_1 (MaxPooling1 (None, 48, 48)            0         
+_________________________________________________________________
+conv1d_2 (Conv1D)            (None, 48, 48)            6960      
+_________________________________________________________________
+max_pooling1d_2 (MaxPooling1 (None, 24, 48)            0         
+_________________________________________________________________
+conv1d_3 (Conv1D)            (None, 24, 1)             241       
+_________________________________________________________________
+up_sampling1d_1 (UpSampling1 (None, 48, 1)             0         
+_________________________________________________________________
+conv1d_4 (Conv1D)            (None, 48, 48)            192       
+_________________________________________________________________
+up_sampling1d_2 (UpSampling1 (None, 96, 48)            0         
+_________________________________________________________________
+conv1d_5 (Conv1D)            (None, 96, 48)            11568     
+_________________________________________________________________
+conv1d_6 (Conv1D)            (None, 96, 1)             241       
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 96)                0         
+=================================================================
+Total params: 21,218
+Trainable params: 21,218
+Non-trainable params: 0
+_________________________________________________________________
+None
+2018-01-21 03:24:01.650678: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-01-21 03:24:03.007700: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.7085
+pciBusID: 0000:03:00.0
+totalMemory: 7.92GiB freeMemory: 7.83GiB
+2018-01-21 03:24:03.007732: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:03:00.0, compute capability: 6.1)
+INFO - sacred_cnn_pool1_representation - Result: 0.033525336533784866
+INFO - sacred_cnn_pool1_representation - Completed after 0:26:43

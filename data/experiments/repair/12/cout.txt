@@ -1,0 +1,30 @@
+INFO - sacred_ann_fc_repair - Running command 'my_experiment'
+INFO - sacred_ann_fc_repair - Started run with ID "12"
+loaded dataset ../../data/training/2018-01-11T19:08:00_repair_15min_bess_chp.npy
+training data has shape (54804, 101) -> (54804, 96) ; mean -0.23300349712371826 var 0.4904291331768036
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_1 (Dense)              (None, 101)               10302     
+_________________________________________________________________
+dense_2 (Dense)              (None, 64)                6528      
+_________________________________________________________________
+dense_3 (Dense)              (None, 96)                6240      
+_________________________________________________________________
+dense_4 (Dense)              (None, 96)                9312      
+_________________________________________________________________
+dense_5 (Dense)              (None, 96)                9312      
+=================================================================
+Total params: 41,694
+Trainable params: 41,694
+Non-trainable params: 0
+_________________________________________________________________
+None
+2018-01-12 03:40:14.665298: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-01-12 03:40:16.018471: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.7085
+pciBusID: 0000:03:00.0
+totalMemory: 7.92GiB freeMemory: 7.83GiB
+2018-01-12 03:40:16.018496: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:03:00.0, compute capability: 6.1)
+INFO - sacred_ann_fc_repair - Result: 0.2743246257305145
+INFO - sacred_ann_fc_repair - Completed after 0:04:53

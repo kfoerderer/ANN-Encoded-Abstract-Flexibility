@@ -1,0 +1,6 @@
+INFO - sacred_predict_training_mean - Running command 'my_experiment'
+INFO - sacred_predict_training_mean - Started run with ID "35"
+loaded dataset ../../data/training/2018-01-18T14:47:00_repair_only_infeasible_15min_chp.npy
+training data has shape (33049, 101) -> (33049, 96) ; mean -0.29022693634033203 var 0.39952999353408813
+INFO - sacred_predict_training_mean - Result: 0.39994555711746216
+INFO - sacred_predict_training_mean - Completed after 0:00:00

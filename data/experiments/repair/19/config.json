@@ -1,0 +1,12 @@
+{
+  "batch_size": 512,
+  "dataset_filename": "../../data/training/2018-01-11T19:08:00_repair_15min_bess.npy",
+  "epochs": 1000,
+  "rnn_units": 64,
+  "scaling_factor_y": 1,
+  "seed": 1924,
+  "test_split": 0.2,
+  "validation_split": 0.1,
+  "verbose_modelcheckpointer": 1,
+  "verbose_training": 0
+}

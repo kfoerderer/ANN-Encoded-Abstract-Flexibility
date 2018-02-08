@@ -1,0 +1,6 @@
+INFO - sacred_training_mean - Running command 'my_experiment'
+INFO - sacred_training_mean - Started run with ID "30"
+loaded dataset ../../data/training/2018-01-11T01:57:00_price-based_15min_bess.npy
+training data has shape (871, 29) -> (871, 96) ; mean 197.3251953125 var 46.20633316040039
+INFO - sacred_training_mean - Result: 45.68632888793945
+INFO - sacred_training_mean - Completed after 0:00:00

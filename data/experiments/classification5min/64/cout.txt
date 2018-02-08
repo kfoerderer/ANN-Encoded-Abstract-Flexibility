@@ -1,0 +1,64 @@
+INFO - sacred_cnn_fc - Running command 'my_experiment'
+INFO - sacred_cnn_fc - Started run with ID "64"
+loaded dataset data/training/2018-01-09T18:26:00_classification_05min_chp.npy
+training data has shape (52800, 1) ; 19707 feasible and 33093 unfeasible
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            (None, 293, 1)       0                                            
+__________________________________________________________________________________________________
+lambda_2 (Lambda)               (None, 288, 1)       0           input_1[0][0]                    
+__________________________________________________________________________________________________
+conv1d_1 (Conv1D)               (None, 284, 16)      96          lambda_2[0][0]                   
+__________________________________________________________________________________________________
+flatten_1 (Flatten)             (None, 4544)         0           conv1d_1[0][0]                   
+__________________________________________________________________________________________________
+lambda_1 (Lambda)               (None, 5)            0           input_1[0][0]                    
+__________________________________________________________________________________________________
+concatenate_1 (Concatenate)     (None, 4549)         0           flatten_1[0][0]                  
+                                                                 lambda_1[0][0]                   
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 10)           45500       concatenate_1[0][0]              
+__________________________________________________________________________________________________
+dense_2 (Dense)                 (None, 1)            11          dense_1[0][0]                    
+==================================================================================================
+Total params: 45,607
+Trainable params: 45,607
+Non-trainable params: 0
+__________________________________________________________________________________________________
+2018-01-10 13:54:14.333158: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-01-10 13:54:14.334449: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+2018-01-10 13:54:14.334475: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:158] retrieving CUDA diagnostic information for host: aifb-ea-deeplearning2
+2018-01-10 13:54:14.334479: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:165] hostname: aifb-ea-deeplearning2
+2018-01-10 13:54:14.334518: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:189] libcuda reported version is: 384.111.0
+2018-01-10 13:54:14.334543: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:369] driver version file contents: """NVRM version: NVIDIA UNIX x86_64 Kernel Module  384.90  Tue Sep 19 19:17:35 PDT 2017
+GCC version:  gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.5) 
+"""
+2018-01-10 13:54:14.334554: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:193] kernel reported version is: 384.90.0
+2018-01-10 13:54:14.334558: E tensorflow/stream_executor/cuda/cuda_diagnostics.cc:303] kernel version 384.90.0 does not match DSO version 384.111.0 -- cannot find working devices in this configuration
+             precision    recall  f1-score   support
+
+        0.0     0.9847    0.9737    0.9792      8219
+        1.0     0.9574    0.9751    0.9662      4981
+
+avg / total     0.9744    0.9742    0.9743     13200
+
+[[8003  216]
+ [ 124 4857]]
+Source 0:
+             precision    recall  f1-score   support
+
+        0.0     0.9203    0.8689    0.8939      1648
+        1.0     0.9574    0.9751    0.9662      4981
+
+avg / total     0.9482    0.9487    0.9482      6629
+
+Source 1:
+             precision    recall  f1-score   support
+
+        0.0     1.0000    1.0000    1.0000      6571
+
+avg / total     1.0000    1.0000    1.0000      6571
+
+INFO - sacred_cnn_fc - Result: 0.9661826138850209
+INFO - sacred_cnn_fc - Completed after 0:04:44

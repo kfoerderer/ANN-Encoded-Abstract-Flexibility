@@ -1,0 +1,114 @@
+INFO - sacred_rnn_lstm_3nets - Running command 'my_experiment'
+INFO - sacred_rnn_lstm_3nets - Started run with ID "9"
+loaded dataset ../../data/training/2018-01-09T18:26:00_classification_15min_chp.npy
+training data has shape (52800, 1) ; 19751 feasible and 33049 unfeasible
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            (None, 98, 1)        0                                            
+__________________________________________________________________________________________________
+lambda_1 (Lambda)               (None, 5)            0           input_1[0][0]                    
+__________________________________________________________________________________________________
+lambda_2 (Lambda)               (None, 93, 1)        0           input_1[0][0]                    
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 20)           120         lambda_1[0][0]                   
+__________________________________________________________________________________________________
+dense_2 (Dense)                 (None, 20)           120         lambda_1[0][0]                   
+__________________________________________________________________________________________________
+lstm_1 (LSTM)                   (None, 20)           1760        lambda_2[0][0]                   
+                                                                 dense_1[0][0]                    
+                                                                 dense_2[0][0]                    
+__________________________________________________________________________________________________
+dense_3 (Dense)                 (None, 1)            21          lstm_1[0][0]                     
+==================================================================================================
+Total params: 2,021
+Trainable params: 2,021
+Non-trainable params: 0
+__________________________________________________________________________________________________
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_2 (InputLayer)            (None, 98, 1)        0                                            
+__________________________________________________________________________________________________
+lambda_3 (Lambda)               (None, 5)            0           input_2[0][0]                    
+__________________________________________________________________________________________________
+lambda_4 (Lambda)               (None, 93, 1)        0           input_2[0][0]                    
+__________________________________________________________________________________________________
+dense_4 (Dense)                 (None, 20)           120         lambda_3[0][0]                   
+__________________________________________________________________________________________________
+dense_5 (Dense)                 (None, 20)           120         lambda_3[0][0]                   
+__________________________________________________________________________________________________
+lstm_2 (LSTM)                   (None, 20)           1760        lambda_4[0][0]                   
+                                                                 dense_4[0][0]                    
+                                                                 dense_5[0][0]                    
+__________________________________________________________________________________________________
+dense_6 (Dense)                 (None, 1)            21          lstm_2[0][0]                     
+==================================================================================================
+Total params: 2,021
+Trainable params: 2,021
+Non-trainable params: 0
+__________________________________________________________________________________________________
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_3 (InputLayer)            (None, 98, 1)        0                                            
+__________________________________________________________________________________________________
+lambda_5 (Lambda)               (None, 5)            0           input_3[0][0]                    
+__________________________________________________________________________________________________
+lambda_6 (Lambda)               (None, 93, 1)        0           input_3[0][0]                    
+__________________________________________________________________________________________________
+dense_7 (Dense)                 (None, 20)           120         lambda_5[0][0]                   
+__________________________________________________________________________________________________
+dense_8 (Dense)                 (None, 20)           120         lambda_5[0][0]                   
+__________________________________________________________________________________________________
+lstm_3 (LSTM)                   (None, 20)           1760        lambda_6[0][0]                   
+                                                                 dense_7[0][0]                    
+                                                                 dense_8[0][0]                    
+__________________________________________________________________________________________________
+dense_9 (Dense)                 (None, 1)            21          lstm_3[0][0]                     
+==================================================================================================
+Total params: 2,021
+Trainable params: 2,021
+Non-trainable params: 0
+__________________________________________________________________________________________________
+2018-01-11 03:49:22.868100: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-01-11 03:49:24.276010: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.7085
+pciBusID: 0000:03:00.0
+totalMemory: 7.92GiB freeMemory: 7.83GiB
+2018-01-11 03:49:24.276038: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:03:00.0, compute capability: 6.1)
+/home/aifb/kabatensorflow/kabatfenv/lib/python3.5/site-packages/keras/engine/topology.py:2344: UserWarning: Layer lstm_1 was passed non-serializable keyword arguments: {'initial_state': [<tf.Tensor 'dense_1/BiasAdd:0' shape=(?, 20) dtype=float32>, <tf.Tensor 'dense_2/BiasAdd:0' shape=(?, 20) dtype=float32>]}. They will not be included in the serialized model (and thus will be missing at deserialization time).
+  str(node.arguments) + '. They will not be included '
+/home/aifb/kabatensorflow/kabatfenv/lib/python3.5/site-packages/keras/engine/topology.py:2344: UserWarning: Layer lstm_2 was passed non-serializable keyword arguments: {'initial_state': [<tf.Tensor 'dense_4/BiasAdd:0' shape=(?, 20) dtype=float32>, <tf.Tensor 'dense_5/BiasAdd:0' shape=(?, 20) dtype=float32>]}. They will not be included in the serialized model (and thus will be missing at deserialization time).
+  str(node.arguments) + '. They will not be included '
+/home/aifb/kabatensorflow/kabatfenv/lib/python3.5/site-packages/keras/engine/topology.py:2344: UserWarning: Layer lstm_3 was passed non-serializable keyword arguments: {'initial_state': [<tf.Tensor 'dense_7/BiasAdd:0' shape=(?, 20) dtype=float32>, <tf.Tensor 'dense_8/BiasAdd:0' shape=(?, 20) dtype=float32>]}. They will not be included in the serialized model (and thus will be missing at deserialization time).
+  str(node.arguments) + '. They will not be included '
+             precision    recall  f1-score   support
+
+        0.0     0.9974    0.9800    0.9886      8263
+        1.0     0.9675    0.9957    0.9814      4937
+
+avg / total     0.9862    0.9859    0.9859     13200
+
+[[8098  165]
+ [  21 4916]]
+Source 0:
+             precision    recall  f1-score   support
+
+        0.0     0.9857    0.8988    0.9403      1611
+        1.0     0.9679    0.9957    0.9816      4937
+
+avg / total     0.9723    0.9719    0.9715      6548
+
+Source 1:
+/home/aifb/kabatensorflow/kabatfenv/lib/python3.5/site-packages/sklearn/metrics/classification.py:1137: UndefinedMetricWarning: Recall and F-score are ill-defined and being set to 0.0 in labels with no true samples.
+  'recall', 'true', average, warn_for)
+             precision    recall  f1-score   support
+
+        0.0     1.0000    0.9997    0.9998      6652
+        1.0     0.0000    0.0000    0.0000         0
+
+avg / total     1.0000    0.9997    0.9998      6652
+
+INFO - sacred_rnn_lstm_3nets - Result: 0.9814334198442803
+INFO - sacred_rnn_lstm_3nets - Completed after 0:43:43

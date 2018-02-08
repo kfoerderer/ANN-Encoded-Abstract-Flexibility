@@ -1,0 +1,67 @@
+INFO - sacred_rnn_lstm2 - Running command 'my_experiment'
+INFO - sacred_rnn_lstm2 - Started run with ID "80"
+loaded dataset ../../data/training/2018-01-11T18:58:00_classification_15min_chp.npy
+training data has shape (52800, 1) ; 19715 feasible and 33085 unfeasible
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            (None, 101)          0                                            
+__________________________________________________________________________________________________
+lambda_2 (Lambda)               (None, 96)           0           input_1[0][0]                    
+__________________________________________________________________________________________________
+lambda_1 (Lambda)               (None, 5)            0           input_1[0][0]                    
+__________________________________________________________________________________________________
+reshape_1 (Reshape)             (None, 96, 1)        0           lambda_2[0][0]                   
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 56)           336         lambda_1[0][0]                   
+__________________________________________________________________________________________________
+dense_2 (Dense)                 (None, 56)           336         lambda_1[0][0]                   
+__________________________________________________________________________________________________
+lstm_1 (LSTM)                   (None, 56)           12992       reshape_1[0][0]                  
+                                                                 dense_1[0][0]                    
+                                                                 dense_2[0][0]                    
+__________________________________________________________________________________________________
+dropout_1 (Dropout)             (None, 56)           0           lstm_1[0][0]                     
+__________________________________________________________________________________________________
+dense_3 (Dense)                 (None, 12)           684         dropout_1[0][0]                  
+__________________________________________________________________________________________________
+dense_4 (Dense)                 (None, 1)            13          dense_3[0][0]                    
+==================================================================================================
+Total params: 14,361
+Trainable params: 14,361
+Non-trainable params: 0
+__________________________________________________________________________________________________
+2018-01-20 22:00:41.850603: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-01-20 22:00:43.217651: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.7085
+pciBusID: 0000:03:00.0
+totalMemory: 7.92GiB freeMemory: 7.83GiB
+2018-01-20 22:00:43.217679: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:03:00.0, compute capability: 6.1)
+/home/aifb/kabatensorflow/kabatfenv/lib/python3.5/site-packages/keras/engine/topology.py:2344: UserWarning: Layer lstm_1 was passed non-serializable keyword arguments: {'initial_state': [<tf.Tensor 'dense_1/Relu:0' shape=(?, 56) dtype=float32>, <tf.Tensor 'dense_2/Relu:0' shape=(?, 56) dtype=float32>]}. They will not be included in the serialized model (and thus will be missing at deserialization time).
+  str(node.arguments) + '. They will not be included '
+             precision    recall  f1-score   support
+
+        0.0     0.9961    0.9905    0.9933      8227
+        1.0     0.9845    0.9936    0.9890      4973
+
+avg / total     0.9917    0.9917    0.9917     13200
+
+[[8149   78]
+ [  32 4941]]
+Source 0:
+             precision    recall  f1-score   support
+
+        0.0     0.9799    0.9525    0.9660      1642
+        1.0     0.9845    0.9936    0.9890      4973
+
+avg / total     0.9833    0.9834    0.9833      6615
+
+Source 1:
+             precision    recall  f1-score   support
+
+        0.0     1.0000    1.0000    1.0000      6585
+
+avg / total     1.0000    1.0000    1.0000      6585
+
+INFO - sacred_rnn_lstm2 - Result: 0.9889911929543634
+INFO - sacred_rnn_lstm2 - Completed after 0:28:04

@@ -1,0 +1,73 @@
+{
+  "artifacts": [
+    "history.png",
+    "model0.hdf5",
+    "model1.hdf5",
+    "model2.hdf5"
+  ],
+  "command": "my_experiment",
+  "experiment": {
+    "base_dir": "/home/aifb/kabatensorflow/flexibility-constraint-learning/neuralnets/classification3nets",
+    "dependencies": [
+      "Keras==2.1.1",
+      "matplotlib==2.1.0",
+      "numpy==1.13.3",
+      "sacred==0.7.2",
+      "scikit-learn==0.19.1"
+    ],
+    "mainfile": "sacred_cnn_fc_3nets.py",
+    "name": "sacred_cnn_fc_3nets",
+    "repositories": [],
+    "sources": [
+      [
+        "sacred_cnn_fc_3nets.py",
+        "_sources/sacred_cnn_fc_3nets_60708ac49ae55afb783b0d81da22d8ed.py"
+      ]
+    ]
+  },
+  "heartbeat": "2018-01-10T16:26:52.814980",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) CPU E5-1620 v4 @ 3.50GHz",
+    "hostname": "aifb-ea-deeplearning2",
+    "os": [
+      "Linux",
+      "Linux-4.4.0-98-generic-x86_64-with-Ubuntu-16.04-xenial"
+    ],
+    "python_version": "3.5.2"
+  },
+  "meta": {
+    "command": "my_experiment",
+    "options": {
+      "--beat_interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": "../../data/experiments/classification3nets",
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print_config": false,
+      "--priority": null,
+      "--queue": false,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "dataset_filename=../../data/training/2018-01-09T18:26:00_classification_15min_chp.npy"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": 0.9737820190858865,
+  "start_time": "2018-01-10T16:25:09.132338",
+  "status": "COMPLETED",
+  "stop_time": "2018-01-10T16:26:52.814252"
+}

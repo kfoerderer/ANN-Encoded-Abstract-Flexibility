@@ -1,0 +1,53 @@
+INFO - sacred_ann_fc - Running command 'my_experiment'
+INFO - sacred_ann_fc - Started run with ID "1"
+loaded dataset data/training/2018-01-09T18:26:00_classification_15min_bess_chp.npy
+training data has shape (45221, 101) ; 20800 feasible and 24421 unfeasible
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_1 (Dense)              (None, 101)               10302     
+_________________________________________________________________
+dense_2 (Dense)              (None, 50)                5100      
+_________________________________________________________________
+dense_3 (Dense)              (None, 10)                510       
+_________________________________________________________________
+dense_4 (Dense)              (None, 1)                 11        
+=================================================================
+Total params: 15,923
+Trainable params: 15,923
+Non-trainable params: 0
+_________________________________________________________________
+None
+2018-01-09 20:52:03.229050: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-01-09 20:52:03.579133: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.7085
+pciBusID: 0000:03:00.0
+totalMemory: 7.92GiB freeMemory: 7.83GiB
+2018-01-09 20:52:03.579198: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:03:00.0, compute capability: 6.1)
+             precision    recall  f1-score   support
+
+        0.0     0.9704    0.9441    0.9571      6209
+        1.0     0.9341    0.9649    0.9492      5097
+
+avg / total     0.9540    0.9535    0.9535     11306
+
+[[5862  347]
+ [ 179 4918]]
+Source 0:
+             precision    recall  f1-score   support
+
+        0.0     0.9185    0.8575    0.8870      2155
+        1.0     0.9408    0.9675    0.9540      5047
+
+avg / total     0.9342    0.9346    0.9339      7202
+
+Source 1:
+             precision    recall  f1-score   support
+
+        0.0     0.9963    0.9901    0.9932      4054
+        1.0     0.4667    0.7000    0.5600        50
+
+avg / total     0.9898    0.9866    0.9879      4104
+
+INFO - sacred_ann_fc - Result: 0.9492375989191276
+INFO - sacred_ann_fc - Completed after 0:01:19

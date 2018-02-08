@@ -1,0 +1,6 @@
+INFO - sacred_norepair - Running command 'my_experiment'
+INFO - sacred_norepair - Started run with ID "9"
+loaded dataset ../../data/training/2018-01-11T19:08:00_repair_15min_bess_chp.npy
+training data has shape (54804, 101) -> (54804, 96) ; mean -0.23300349712371826 var 0.4904291331768036
+INFO - sacred_norepair - Result: 4.975362777709961
+INFO - sacred_norepair - Completed after 0:00:00

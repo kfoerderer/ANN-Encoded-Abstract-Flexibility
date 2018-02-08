@@ -1,0 +1,60 @@
+INFO - sacred_cnn_fc - Running command 'my_experiment'
+INFO - sacred_cnn_fc - Started run with ID "28"
+loaded dataset data/training/2018-01-09T18:26:00_classification_15min_chp.npy
+training data has shape (52800, 1) ; 19751 feasible and 33049 unfeasible
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            (None, 101, 1)       0                                            
+__________________________________________________________________________________________________
+lambda_2 (Lambda)               (None, 96, 1)        0           input_1[0][0]                    
+__________________________________________________________________________________________________
+conv1d_1 (Conv1D)               (None, 92, 16)       96          lambda_2[0][0]                   
+__________________________________________________________________________________________________
+flatten_1 (Flatten)             (None, 1472)         0           conv1d_1[0][0]                   
+__________________________________________________________________________________________________
+lambda_1 (Lambda)               (None, 5)            0           input_1[0][0]                    
+__________________________________________________________________________________________________
+concatenate_1 (Concatenate)     (None, 1477)         0           flatten_1[0][0]                  
+                                                                 lambda_1[0][0]                   
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 10)           14780       concatenate_1[0][0]              
+__________________________________________________________________________________________________
+dense_2 (Dense)                 (None, 1)            11          dense_1[0][0]                    
+==================================================================================================
+Total params: 14,887
+Trainable params: 14,887
+Non-trainable params: 0
+__________________________________________________________________________________________________
+2018-01-10 04:10:22.469322: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-01-10 04:10:22.617107: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.7085
+pciBusID: 0000:03:00.0
+totalMemory: 7.92GiB freeMemory: 7.83GiB
+2018-01-10 04:10:22.617191: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:03:00.0, compute capability: 6.1)
+             precision    recall  f1-score   support
+
+        0.0     0.9894    0.9787    0.9840      8263
+        1.0     0.9650    0.9824    0.9736      4937
+
+avg / total     0.9802    0.9801    0.9801     13200
+
+[[8087  176]
+ [  87 4850]]
+Source 0:
+             precision    recall  f1-score   support
+
+        0.0     0.9428    0.8908    0.9161      1611
+        1.0     0.9650    0.9824    0.9736      4937
+
+avg / total     0.9595    0.9598    0.9594      6548
+
+Source 1:
+             precision    recall  f1-score   support
+
+        0.0     1.0000    1.0000    1.0000      6652
+
+avg / total     1.0000    1.0000    1.0000      6652
+
+INFO - sacred_cnn_fc - Result: 0.9736023286158787
+INFO - sacred_cnn_fc - Completed after 0:01:29

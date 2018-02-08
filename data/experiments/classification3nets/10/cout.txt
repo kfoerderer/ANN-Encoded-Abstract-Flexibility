@@ -1,0 +1,85 @@
+INFO - sacred_ann_fc_3nets - Running command 'my_experiment'
+INFO - sacred_ann_fc_3nets - Started run with ID "10"
+loaded dataset ../../data/training/2018-01-11T18:58:00_classification_15min_bess.npy
+training data has shape (52800, 101) ; 23778 feasible and 29022 unfeasible
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_1 (Dense)              (None, 98)                9702      
+_________________________________________________________________
+dense_2 (Dense)              (None, 50)                4950      
+_________________________________________________________________
+dense_3 (Dense)              (None, 10)                510       
+_________________________________________________________________
+dense_4 (Dense)              (None, 1)                 11        
+=================================================================
+Total params: 15,173
+Trainable params: 15,173
+Non-trainable params: 0
+_________________________________________________________________
+None
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_5 (Dense)              (None, 98)                9702      
+_________________________________________________________________
+dense_6 (Dense)              (None, 50)                4950      
+_________________________________________________________________
+dense_7 (Dense)              (None, 10)                510       
+_________________________________________________________________
+dense_8 (Dense)              (None, 1)                 11        
+=================================================================
+Total params: 15,173
+Trainable params: 15,173
+Non-trainable params: 0
+_________________________________________________________________
+None
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_9 (Dense)              (None, 98)                9702      
+_________________________________________________________________
+dense_10 (Dense)             (None, 50)                4950      
+_________________________________________________________________
+dense_11 (Dense)             (None, 10)                510       
+_________________________________________________________________
+dense_12 (Dense)             (None, 1)                 11        
+=================================================================
+Total params: 15,173
+Trainable params: 15,173
+Non-trainable params: 0
+_________________________________________________________________
+None
+2018-01-12 02:44:56.583366: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-01-12 02:44:57.952277: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.7085
+pciBusID: 0000:03:00.0
+totalMemory: 7.92GiB freeMemory: 7.83GiB
+2018-01-12 02:44:57.952302: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:03:00.0, compute capability: 6.1)
+             precision    recall  f1-score   support
+
+        0.0     0.9693    0.9731    0.9712      7109
+        1.0     0.9685    0.9640    0.9663      6091
+
+avg / total     0.9689    0.9689    0.9689     13200
+
+[[6918  191]
+ [ 219 5872]]
+Source 0:
+             precision    recall  f1-score   support
+
+        0.0     0.7145    0.7621    0.7375       660
+        1.0     0.9739    0.9668    0.9704      6061
+
+avg / total     0.9484    0.9467    0.9475      6721
+
+Source 1:
+             precision    recall  f1-score   support
+
+        0.0     0.9972    0.9947    0.9960      6449
+        1.0     0.2609    0.4000    0.3158        30
+
+avg / total     0.9938    0.9920    0.9928      6479
+
+INFO - sacred_ann_fc_3nets - Result: 0.9662662497943064
+INFO - sacred_ann_fc_3nets - Completed after 0:00:59

@@ -1,0 +1,57 @@
+INFO - sacred_ann_fc - Running command 'my_experiment'
+INFO - sacred_ann_fc - Started run with ID "49"
+loaded dataset data/training/2018-01-09T18:26:00_classification_05min_bess.npy
+training data has shape (55440, 293) ; 20205 feasible and 35235 unfeasible
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_1 (Dense)              (None, 293)               86142     
+_________________________________________________________________
+dense_2 (Dense)              (None, 50)                14700     
+_________________________________________________________________
+dense_3 (Dense)              (None, 10)                510       
+_________________________________________________________________
+dense_4 (Dense)              (None, 1)                 11        
+=================================================================
+Total params: 101,363
+Trainable params: 101,363
+Non-trainable params: 0
+_________________________________________________________________
+None
+2018-01-10 09:42:44.065873: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-01-10 09:42:44.067173: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+2018-01-10 09:42:44.067213: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:158] retrieving CUDA diagnostic information for host: aifb-ea-deeplearning2
+2018-01-10 09:42:44.067217: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:165] hostname: aifb-ea-deeplearning2
+2018-01-10 09:42:44.067257: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:189] libcuda reported version is: 384.111.0
+2018-01-10 09:42:44.067270: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:369] driver version file contents: """NVRM version: NVIDIA UNIX x86_64 Kernel Module  384.90  Tue Sep 19 19:17:35 PDT 2017
+GCC version:  gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.5) 
+"""
+2018-01-10 09:42:44.067280: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:193] kernel reported version is: 384.90.0
+2018-01-10 09:42:44.067285: E tensorflow/stream_executor/cuda/cuda_diagnostics.cc:303] kernel version 384.90.0 does not match DSO version 384.111.0 -- cannot find working devices in this configuration
+             precision    recall  f1-score   support
+
+        0.0     0.9664    0.9414    0.9538      8872
+        1.0     0.9003    0.9419    0.9206      4988
+
+avg / total     0.9427    0.9416    0.9418     13860
+
+[[8352  520]
+ [ 290 4698]]
+Source 0:
+             precision    recall  f1-score   support
+
+        0.0     0.8667    0.7720    0.8166      2206
+        1.0     0.9029    0.9470    0.9244      4941
+
+avg / total     0.8917    0.8930    0.8911      7147
+
+Source 1:
+             precision    recall  f1-score   support
+
+        0.0     0.9958    0.9974    0.9966      6666
+        1.0     0.5278    0.4043    0.4578        47
+
+avg / total     0.9925    0.9933    0.9929      6713
+
+INFO - sacred_ann_fc - Result: 0.9206349206349208
+INFO - sacred_ann_fc - Completed after 0:01:30

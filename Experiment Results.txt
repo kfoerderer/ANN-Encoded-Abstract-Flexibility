@@ -1,0 +1,214 @@
+Experiment Results (saved in ./data/experiments)
+
+######################################
+### Pattern A                      ###
+### classification                 ###
+######################################
+    experiment_name                       id F1-score                                  epochs
+----------------------------------------------------------------------------------------------
+dataset ../../data/training/2018-01-11T18:58:00_classification_15min_bess.npy: 
+    sacred_ann_fc2                        75 0.975436861194                            78
+    sacred_cnn_pool2                      82 0.98478652053                             249
+    sacred_rnn_lstm2                      77 0.994833948339                            346
+
+dataset ../../data/training/2018-01-11T18:58:00_classification_15min_bess_chp.npy: 
+    sacred_ann_fc2                        72 0.943428901289                            72
+    sacred_cnn_pool2                      81 0.959804658152                            234
+    sacred_rnn_lstm2                      74 0.972077797034                            416
+
+dataset ../../data/training/2018-01-11T18:58:00_classification_15min_chp.npy: 
+    sacred_ann_fc2                        78 0.978121236451                            87
+    sacred_cnn_pool2                      83 0.993186372745                            335
+    sacred_rnn_lstm2                      80 0.988991192954                            341
+
+----------------------------------------------------------------------------------------------
+
+
+######################################
+### Pattern B                      ###
+### loadprediction (price-based)   ###
+######################################
+    experiment_name                       id RMSE                 MAE                  epochs
+----------------------------------------------------------------------------------------------
+dataset ../../data/training/2018-01-11T01:57:00_price-based_15min_bess.npy: 
+    sacred_ann_fc2_prices                 27 2.5416674614         1.69308149815        5000
+    sacred_cnn_pool1_prices               29 9.2198343277         4.81573820114        5000
+    sacred_predict_zero                   15 204.785263062                             
+    sacred_rnn_lstm2_prices               31 10.8536996841        6.87371492386        4291
+    sacred_training_mean                  30 45.6863288879        32.8663291931        
+
+dataset ../../data/training/2018-01-11T01:57:00_price-based_15min_bess_chp.npy: 
+    sacred_ann_fc2_prices                 22 11.3960361481        4.98549699783        1724
+    sacred_cnn_pool1_prices               24 16.7141265869        7.50701904297        3284
+    sacred_predict_zero                   13 72.9014587402                             
+    sacred_rnn_lstm2_prices               26 39.7903747559        11.1145601273        412
+    sacred_training_mean                  25 66.8111877441        45.4729194641        
+
+dataset ../../data/training/2018-01-11T01:57:00_price-based_15min_chp.npy: 
+    sacred_ann_fc2_prices                 32 9.07771968842        4.76786661148        3170
+    sacred_cnn_pool1_prices               34 184.217407227        118.359764099        5000
+    sacred_predict_zero                   17 385.792785645                             
+    sacred_rnn_lstm2_prices               36 312.725646973        223.238571167        676
+    sacred_training_mean                  35 376.957885742        327.085449219        
+
+----------------------------------------------------------------------------------------------
+
+
+######################################
+### Pattern C                      ###
+### representation                 ###
+######################################
+    experiment_name                       id RMSE                 MAE                  epochs
+----------------------------------------------------------------------------------------------
+dataset ../../data/training/2018-01-18T17:57:00_representation_CS_15min_bess.npy: 
+    sacred_ann_fc2_representation         49 0.299283027649       0.239084407687       2450
+    sacred_cnn_pool1_representation       50 0.393496662378       0.314847499132       2719
+    sacred_predict_training_mean          62 0.564651429653       0.459782212973       
+    sacred_rnn_lstm2_representation       51 0.00472553493455     0.00182767410297     2458
+
+dataset ../../data/training/2018-01-18T17:57:00_representation_CS_15min_chp.npy: 
+    sacred_ann_fc2_representation         52 0.313871175051       0.236848950386       4829
+    sacred_cnn_pool1_representation       53 0.363220930099       0.261572867632       2219
+    sacred_predict_training_mean          63 0.461204648018       0.425788909197       
+    sacred_rnn_lstm2_representation       54 0.249733150005       0.132983624935       555
+
+dataset ../../data/training/2018-01-18T17:57:00_representation_MT_15min_bess.npy: 
+    sacred_ann_fc2_representation         55 0.0522723980248      0.0299959182739      3179
+    sacred_cnn_pool1_representation       56 0.0335253365338      0.0143269030377      3177
+    sacred_predict_training_mean          64 0.229264229536       0.091360040009       
+    sacred_rnn_lstm2_mt_representation    61 0.0344634391367      0.0199276786298      3024
+
+dataset ../../data/training/2018-01-18T17:57:00_representation_MT_15min_chp.npy: 
+    sacred_ann_fc2_representation         58 0.121911689639       0.057215731591       1965
+    sacred_cnn_pool1_representation       59 0.159036532044       0.0561422295868      1820
+    sacred_predict_training_mean          65 0.449201643467       0.405745357275       
+    sacred_rnn_lstm2_mt_representation    66 0.140182554722       0.0524766296148      2551
+
+----------------------------------------------------------------------------------------------
+
+
+######################################
+### Pattern D                      ###
+### repaironlyinfeasible           ###
+######################################
+    experiment_name                       id RMSE                 MAE                  epochs
+----------------------------------------------------------------------------------------------
+dataset ../../data/training/2018-01-18T14:47:00_repair_only_infeasible_15min_bess.npy: 
+    sacred_ann_fc2_representation         22 0.201142460108       0.149024263024       868
+    sacred_cnn_pool1_representation       23 0.266278743744       0.19347448647        297
+    sacred_norepair                        5 8.15500068665                             
+    sacred_predict_training_mean          34 0.266510605812       0.192990258336       
+    sacred_predict_zero                    6 0.266725242138                            
+    sacred_rnn_lstm2_representation       24 0.113561689854       0.0698673352599      2872
+
+dataset ../../data/training/2018-01-18T14:47:00_repair_only_infeasible_15min_bess_chp.npy: 
+    sacred_ann_fc2_representation         30 0.337545484304       0.255839347839       729
+    sacred_cnn_pool1_representation       31 0.379823833704       0.293492227793       2145
+    sacred_norepair                       19 7.77000284195                             
+    sacred_predict_training_mean          36 0.455636143684       0.359187930822       
+    sacred_predict_zero                   20 0.530300557613                            
+    sacred_rnn_lstm2_representation       32 0.211820989847       0.133074745536       1565
+
+dataset ../../data/training/2018-01-18T14:47:00_repair_only_infeasible_15min_chp.npy: 
+    sacred_ann_fc2_representation         26 0.330283999443       0.251711279154       633
+    sacred_cnn_pool1_representation       27 0.347498476505       0.272747904062       1067
+    sacred_predict_training_mean          35 0.399945557117       0.351902723312       
+    sacred_predict_zero                   13 0.494011253119                            
+    sacred_rnn_lstm2_representation       28 0.305868864059       0.22447258234        952
+
+----------------------------------------------------------------------------------------------
+
+
+######################################
+### Test for Pattern A: 1 net for each season
+### classification3nets            ###
+######################################
+    experiment_name                       id F1-score                                  epochs
+----------------------------------------------------------------------------------------------
+dataset ../../data/training/2018-01-09T18:26:00_classification_15min_bess_chp.npy: 
+    sacred_ann_fc_3nets                    1 0.930006795457                            200
+    sacred_cnn_fc_3nets                    2 0.932063368646                            200
+    sacred_rnn_lstm_3nets                  7 0.970576848626                            200
+
+dataset ../../data/training/2018-01-09T18:26:00_classification_15min_chp.npy: 
+    sacred_ann_fc_3nets                    5 0.979044932501                            200
+    sacred_cnn_fc_3nets                    6 0.973782019086                            200
+    sacred_rnn_lstm_3nets                  9 0.981433419844                            200
+
+dataset ../../data/training/2018-01-11T18:58:00_classification_15min_bess.npy: 
+    sacred_ann_fc_3nets                   10 0.966266249794                            200
+    sacred_cnn_fc_3nets                   11 0.937403337403                            200
+    sacred_rnn_lstm_3nets                 12 0.946372732958                            200
+
+----------------------------------------------------------------------------------------------
+
+
+######################################
+### Test for Pattern A: 5 minute resolution
+### classification5min             ###
+######################################
+    experiment_name                       id F1-score                                  epochs
+----------------------------------------------------------------------------------------------
+dataset data/training/2018-01-09T18:26:00_classification_05min_bess.npy: 
+    sacred_ann_fc                         49 0.920634920635                            200
+    sacred_cnn_fc                         52 0.927368833203                            200
+    sacred_rnn_lstm                       59 0.747319595468                            200
+
+dataset data/training/2018-01-09T18:26:00_classification_05min_bess_chp.npy: 
+    sacred_ann_fc                         37 0.939416604338                            200
+    sacred_cnn_fc                         40 0.941176470588                            200
+    sacred_rnn_lstm                       47 0.842918882979                            200
+
+dataset data/training/2018-01-09T18:26:00_classification_05min_chp.npy: 
+    sacred_ann_fc                         61 0.980687332871                            200
+    sacred_cnn_fc                         64 0.966182613885                            200
+
+dataset data/training/2018-01-09T18:26:00_classification_15min_bess.npy: 
+    sacred_ann_fc                         13 0.926355436614                            200
+    sacred_cnn_fc                         16 0.944793580199                            200
+    sacred_rnn_lstm                       23 0.961743341404                            200
+
+dataset data/training/2018-01-09T18:26:00_classification_15min_bess_chp.npy: 
+    sacred_ann_fc                          1 0.949237598919                            200
+    sacred_cnn_fc                          4 0.957025591502                            200
+    sacred_rnn_lstm                       11 0.96746162016                             200
+
+dataset data/training/2018-01-09T18:26:00_classification_15min_chp.npy: 
+    sacred_ann_fc                         25 0.98012309555                             200
+    sacred_cnn_fc                         28 0.973602328616                            200
+    sacred_rnn_lstm                       35 0.985762983758                            200
+
+----------------------------------------------------------------------------------------------
+
+
+######################################
+### Test for Pattern D: feasible and infeasible load profiles
+### repair                         ###
+######################################
+    experiment_name                       id RMSE                 MAE                  epochs
+----------------------------------------------------------------------------------------------
+dataset ../../data/training/2018-01-11T19:08:00_repair_15min_bess.npy: 
+    sacred_ann_fc_repair                  10 0.235233917832                            1000
+    sacred_cnn_fc_repair                  13 0.125462204218                            1000
+    sacred_norepair                        7 6.29517221451                             
+    sacred_predict_zero                    1 0.335994273424                            
+    sacred_rnn_lstm_repair                19 0.0859112590551                           1000
+    sacred_training_mean                   2 0.3350918293                              
+
+dataset ../../data/training/2018-01-11T19:08:00_repair_15min_bess_chp.npy: 
+    sacred_ann_fc_repair                  12 0.274324625731                            1000
+    sacred_cnn_fc_repair                  15 0.213653191924                            1000
+    sacred_norepair                        9 4.97536277771                             
+    sacred_predict_zero                    5 0.54217427969                             
+    sacred_rnn_lstm_repair                21 0.139110252261                            1000
+    sacred_training_mean                   6 0.489418596029                            
+
+dataset ../../data/training/2018-01-11T19:08:00_repair_15min_chp.npy: 
+    sacred_ann_fc_repair                  11 0.246048778296                            1000
+    sacred_cnn_fc_repair                  14 0.249126672745                            1000
+    sacred_norepair                        8 6.73927497864                             
+    sacred_predict_zero                    3 0.507501602173                            
+    sacred_rnn_lstm_repair                20 0.220981523395                            1000
+    sacred_training_mean                   4 0.416061341763                            
+
+----------------------------------------------------------------------------------------------

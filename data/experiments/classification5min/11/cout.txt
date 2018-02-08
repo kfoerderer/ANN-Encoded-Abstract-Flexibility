@@ -1,0 +1,62 @@
+INFO - sacred_rnn_lstm - Running command 'my_experiment'
+INFO - sacred_rnn_lstm - Started run with ID "11"
+loaded dataset data/training/2018-01-09T18:26:00_classification_15min_bess_chp.npy
+training data has shape (45221, 1) ; 20800 feasible and 24421 unfeasible
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            (None, 101, 1)       0                                            
+__________________________________________________________________________________________________
+lambda_1 (Lambda)               (None, 5)            0           input_1[0][0]                    
+__________________________________________________________________________________________________
+lambda_2 (Lambda)               (None, 96, 1)        0           input_1[0][0]                    
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 20)           120         lambda_1[0][0]                   
+__________________________________________________________________________________________________
+dense_2 (Dense)                 (None, 20)           120         lambda_1[0][0]                   
+__________________________________________________________________________________________________
+lstm_1 (LSTM)                   (None, 20)           1760        lambda_2[0][0]                   
+                                                                 dense_1[0][0]                    
+                                                                 dense_2[0][0]                    
+__________________________________________________________________________________________________
+dense_3 (Dense)                 (None, 1)            21          lstm_1[0][0]                     
+==================================================================================================
+Total params: 2,021
+Trainable params: 2,021
+Non-trainable params: 0
+__________________________________________________________________________________________________
+2018-01-09 22:54:53.959512: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-01-09 22:54:54.193385: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.7085
+pciBusID: 0000:03:00.0
+totalMemory: 7.92GiB freeMemory: 7.83GiB
+2018-01-09 22:54:54.193637: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:03:00.0, compute capability: 6.1)
+/home/aifb/kabatensorflow/kabatfenv/lib/python3.5/site-packages/keras/engine/topology.py:2344: UserWarning: Layer lstm_1 was passed non-serializable keyword arguments: {'initial_state': [<tf.Tensor 'dense_1/BiasAdd:0' shape=(?, 20) dtype=float32>, <tf.Tensor 'dense_2/BiasAdd:0' shape=(?, 20) dtype=float32>]}. They will not be included in the serialized model (and thus will be missing at deserialization time).
+  str(node.arguments) + '. They will not be included '
+             precision    recall  f1-score   support
+
+        0.0     0.9856    0.9597    0.9725      6209
+        1.0     0.9525    0.9829    0.9675      5097
+
+avg / total     0.9707    0.9702    0.9702     11306
+
+[[5959  250]
+ [  87 5010]]
+Source 0:
+             precision    recall  f1-score   support
+
+        0.0     0.9597    0.8951    0.9263      2155
+        1.0     0.9565    0.9840    0.9700      5047
+
+avg / total     0.9574    0.9574    0.9569      7202
+
+Source 1:
+             precision    recall  f1-score   support
+
+        0.0     0.9985    0.9941    0.9963      4054
+        1.0     0.6471    0.8800    0.7458        50
+
+avg / total     0.9942    0.9927    0.9932      4104
+
+INFO - sacred_rnn_lstm - Result: 0.9674616201602781
+INFO - sacred_rnn_lstm - Completed after 1:11:39

@@ -1,0 +1,86 @@
+{
+  "artifacts": [
+    "history.png",
+    "model.hdf5"
+  ],
+  "command": "my_experiment",
+  "experiment": {
+    "base_dir": "/home/aifb/kabatensorflow/flexibility-constraint-learning",
+    "dependencies": [
+      "Keras==2.1.1",
+      "matplotlib==2.1.0",
+      "numpy==1.13.3",
+      "sacred==0.7.2",
+      "scikit-learn==0.19.1"
+    ],
+    "mainfile": "sacred_ann_fc.py",
+    "name": "sacred_ann_fc",
+    "repositories": [],
+    "sources": [
+      [
+        "sacred_ann_fc.py",
+        "_sources/sacred_ann_fc_a0d96c74ec44b2226f4c446c14dcfe19.py"
+      ]
+    ]
+  },
+  "heartbeat": "2018-01-10T05:28:59.052158",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) CPU E5-1620 v4 @ 3.50GHz",
+    "gpus": {
+      "driver_version": "384.90",
+      "gpus": [
+        {
+          "model": "GeForce GTX 1070",
+          "persistence_mode": false,
+          "total_memory": 8108
+        },
+        {
+          "model": "GeForce GTX 1070",
+          "persistence_mode": false,
+          "total_memory": 8114
+        }
+      ]
+    },
+    "hostname": "aifb-ea-deeplearning2",
+    "os": [
+      "Linux",
+      "Linux-4.4.0-98-generic-x86_64-with-Ubuntu-16.04-xenial"
+    ],
+    "python_version": "3.5.2"
+  },
+  "meta": {
+    "command": "my_experiment",
+    "options": {
+      "--beat_interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": "data/experiments/2018-01-09-final",
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print_config": false,
+      "--priority": null,
+      "--queue": false,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "dataset_filename=data/training/2018-01-09T18:26:00_classification_05min_bess_chp.npy"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": 0.9394166043380703,
+  "start_time": "2018-01-10T05:28:04.311653",
+  "status": "COMPLETED",
+  "stop_time": "2018-01-10T05:28:59.051467"
+}

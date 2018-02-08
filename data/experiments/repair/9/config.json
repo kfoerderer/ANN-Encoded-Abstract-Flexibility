@@ -1,0 +1,5 @@
+{
+  "dataset_filename": "../../data/training/2018-01-11T19:08:00_repair_15min_bess_chp.npy",
+  "seed": 1924,
+  "test_split": 0.2
+}

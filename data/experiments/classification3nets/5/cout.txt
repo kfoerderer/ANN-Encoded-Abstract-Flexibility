@@ -1,0 +1,88 @@
+INFO - sacred_ann_fc_3nets - Running command 'my_experiment'
+INFO - sacred_ann_fc_3nets - Started run with ID "5"
+loaded dataset ../../data/training/2018-01-09T18:26:00_classification_15min_chp.npy
+training data has shape (52800, 101) ; 19751 feasible and 33049 unfeasible
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_1 (Dense)              (None, 98)                9702      
+_________________________________________________________________
+dense_2 (Dense)              (None, 50)                4950      
+_________________________________________________________________
+dense_3 (Dense)              (None, 10)                510       
+_________________________________________________________________
+dense_4 (Dense)              (None, 1)                 11        
+=================================================================
+Total params: 15,173
+Trainable params: 15,173
+Non-trainable params: 0
+_________________________________________________________________
+None
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_5 (Dense)              (None, 98)                9702      
+_________________________________________________________________
+dense_6 (Dense)              (None, 50)                4950      
+_________________________________________________________________
+dense_7 (Dense)              (None, 10)                510       
+_________________________________________________________________
+dense_8 (Dense)              (None, 1)                 11        
+=================================================================
+Total params: 15,173
+Trainable params: 15,173
+Non-trainable params: 0
+_________________________________________________________________
+None
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_9 (Dense)              (None, 98)                9702      
+_________________________________________________________________
+dense_10 (Dense)             (None, 50)                4950      
+_________________________________________________________________
+dense_11 (Dense)             (None, 10)                510       
+_________________________________________________________________
+dense_12 (Dense)             (None, 1)                 11        
+=================================================================
+Total params: 15,173
+Trainable params: 15,173
+Non-trainable params: 0
+_________________________________________________________________
+None
+2018-01-10 17:24:28.064817: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-01-10 17:24:28.066629: E tensorflow/stream_executor/cuda/cuda_driver.cc:406] failed call to cuInit: CUDA_ERROR_NO_DEVICE
+2018-01-10 17:24:28.066671: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:158] retrieving CUDA diagnostic information for host: aifb-ea-deeplearning2
+2018-01-10 17:24:28.066680: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:165] hostname: aifb-ea-deeplearning2
+2018-01-10 17:24:28.066743: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:189] libcuda reported version is: 384.111.0
+2018-01-10 17:24:28.066766: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:369] driver version file contents: """NVRM version: NVIDIA UNIX x86_64 Kernel Module  384.90  Tue Sep 19 19:17:35 PDT 2017
+GCC version:  gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.5) 
+"""
+2018-01-10 17:24:28.066784: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:193] kernel reported version is: 384.90.0
+2018-01-10 17:24:28.066793: E tensorflow/stream_executor/cuda/cuda_diagnostics.cc:303] kernel version 384.90.0 does not match DSO version 384.111.0 -- cannot find working devices in this configuration
+             precision    recall  f1-score   support
+
+        0.0     0.9905    0.9843    0.9874      8263
+        1.0     0.9739    0.9842    0.9790      4937
+
+avg / total     0.9843    0.9842    0.9843     13200
+
+[[8133  130]
+ [  78 4859]]
+Source 0:
+             precision    recall  f1-score   support
+
+        0.0     0.9500    0.9193    0.9344      1611
+        1.0     0.9739    0.9842    0.9790      4937
+
+avg / total     0.9680    0.9682    0.9681      6548
+
+Source 1:
+             precision    recall  f1-score   support
+
+        0.0     1.0000    1.0000    1.0000      6652
+
+avg / total     1.0000    1.0000    1.0000      6652
+
+INFO - sacred_ann_fc_3nets - Result: 0.9790449325005037
+INFO - sacred_ann_fc_3nets - Completed after 0:00:40

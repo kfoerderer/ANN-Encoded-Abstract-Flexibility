@@ -1,0 +1,12 @@
+{
+  "batch_size": 1024,
+  "dataset_filename": "../../data/training/2018-01-18T14:47:00_repair_only_infeasible_15min_bess.npy",
+  "epochs": 5000,
+  "rnn_units": 56,
+  "scaling_factor_y": 1,
+  "seed": 1924,
+  "test_split": 0.2,
+  "validation_split": 0.1,
+  "verbose_modelcheckpointer": 1,
+  "verbose_training": 0
+}

@@ -1,0 +1,6 @@
+INFO - sacred_predict_zero - Running command 'my_experiment'
+INFO - sacred_predict_zero - Started run with ID "13"
+loaded dataset ../../data/training/2018-01-11T01:57:00_price-based_15min_bess_chp.npy
+training data has shape (9583, 29) -> (9583, 96) ; mean -29.754215240478516 var 64.64319610595703
+INFO - sacred_predict_zero - Result: 72.90145874023438
+INFO - sacred_predict_zero - Completed after 0:00:00

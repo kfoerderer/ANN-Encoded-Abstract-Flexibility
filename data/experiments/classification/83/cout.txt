@@ -1,0 +1,72 @@
+INFO - sacred_cnn_pool2 - Running command 'my_experiment'
+INFO - sacred_cnn_pool2 - Started run with ID "83"
+loaded dataset ../../data/training/2018-01-11T18:58:00_classification_15min_chp.npy
+training data has shape (52800, 1) ; 19715 feasible and 33085 unfeasible
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            (None, 101, 1)       0                                            
+__________________________________________________________________________________________________
+lambda_2 (Lambda)               (None, 96, 1)        0           input_1[0][0]                    
+__________________________________________________________________________________________________
+conv1d_1 (Conv1D)               (None, 96, 48)       288         lambda_2[0][0]                   
+__________________________________________________________________________________________________
+max_pooling1d_1 (MaxPooling1D)  (None, 48, 48)       0           conv1d_1[0][0]                   
+__________________________________________________________________________________________________
+conv1d_2 (Conv1D)               (None, 48, 48)       6960        max_pooling1d_1[0][0]            
+__________________________________________________________________________________________________
+max_pooling1d_2 (MaxPooling1D)  (None, 24, 48)       0           conv1d_2[0][0]                   
+__________________________________________________________________________________________________
+conv1d_3 (Conv1D)               (None, 24, 24)       3480        max_pooling1d_2[0][0]            
+__________________________________________________________________________________________________
+max_pooling1d_3 (MaxPooling1D)  (None, 12, 24)       0           conv1d_3[0][0]                   
+__________________________________________________________________________________________________
+flatten_1 (Flatten)             (None, 288)          0           max_pooling1d_3[0][0]            
+__________________________________________________________________________________________________
+dropout_1 (Dropout)             (None, 288)          0           flatten_1[0][0]                  
+__________________________________________________________________________________________________
+lambda_1 (Lambda)               (None, 5)            0           input_1[0][0]                    
+__________________________________________________________________________________________________
+concatenate_1 (Concatenate)     (None, 293)          0           dropout_1[0][0]                  
+                                                                 lambda_1[0][0]                   
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 12)           3528        concatenate_1[0][0]              
+__________________________________________________________________________________________________
+dense_2 (Dense)                 (None, 1)            13          dense_1[0][0]                    
+==================================================================================================
+Total params: 14,269
+Trainable params: 14,269
+Non-trainable params: 0
+__________________________________________________________________________________________________
+2018-01-21 17:11:39.657821: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-01-21 17:11:41.097242: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.7085
+pciBusID: 0000:03:00.0
+totalMemory: 7.92GiB freeMemory: 7.83GiB
+2018-01-21 17:11:41.097271: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:03:00.0, compute capability: 6.1)
+             precision    recall  f1-score   support
+
+        0.0     0.9979    0.9938    0.9959      8227
+        1.0     0.9898    0.9966    0.9932      4973
+
+avg / total     0.9949    0.9948    0.9949     13200
+
+[[8176   51]
+ [  17 4956]]
+Source 0:
+             precision    recall  f1-score   support
+
+        0.0     0.9894    0.9689    0.9791      1642
+        1.0     0.9898    0.9966    0.9932      4973
+
+avg / total     0.9897    0.9897    0.9897      6615
+
+Source 1:
+             precision    recall  f1-score   support
+
+        0.0     1.0000    1.0000    1.0000      6585
+
+avg / total     1.0000    1.0000    1.0000      6585
+
+INFO - sacred_cnn_pool2 - Result: 0.993186372745491
+INFO - sacred_cnn_pool2 - Completed after 0:03:42

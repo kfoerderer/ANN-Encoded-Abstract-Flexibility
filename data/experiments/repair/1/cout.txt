@@ -1,0 +1,6 @@
+INFO - sacred_predict_zero - Running command 'my_experiment'
+INFO - sacred_predict_zero - Started run with ID "1"
+loaded dataset ../../data/training/2018-01-11T19:08:00_repair_15min_bess.npy
+training data has shape (51003, 101) -> (51003, 96) ; mean 0.02458215318620205 var 0.3342428505420685
+INFO - sacred_predict_zero - Result: 0.33599427342414856
+INFO - sacred_predict_zero - Completed after 0:00:00

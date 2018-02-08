@@ -1,0 +1,604 @@
+INFO - sacred_rnn_lstm2_representation - Running command 'my_experiment'
+INFO - sacred_rnn_lstm2_representation - Started run with ID "54"
+loaded dataset ../../data/training/2018-01-18T17:57:00_representation_CS_15min_chp.npy
+training data has shape (16800, 101) -> (16800, 96) ; mean -0.3078007102012634 var 0.4615836441516876
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            (None, 101)          0                                            
+__________________________________________________________________________________________________
+lambda_2 (Lambda)               (None, 96)           0           input_1[0][0]                    
+__________________________________________________________________________________________________
+lambda_1 (Lambda)               (None, 5)            0           input_1[0][0]                    
+__________________________________________________________________________________________________
+reshape_1 (Reshape)             (None, 96, 1)        0           lambda_2[0][0]                   
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (None, 56)           336         lambda_1[0][0]                   
+__________________________________________________________________________________________________
+dense_2 (Dense)                 (None, 56)           336         lambda_1[0][0]                   
+__________________________________________________________________________________________________
+lstm_1 (LSTM)                   [(None, 56), (None,  12992       reshape_1[0][0]                  
+                                                                 dense_1[0][0]                    
+                                                                 dense_2[0][0]                    
+__________________________________________________________________________________________________
+lstm_2 (LSTM)                   (None, 96, 56)       12992       reshape_1[0][0]                  
+                                                                 lstm_1[0][1]                     
+                                                                 lstm_1[0][2]                     
+__________________________________________________________________________________________________
+time_distributed_1 (TimeDistrib (None, 96, 56)       3192        lstm_2[0][0]                     
+__________________________________________________________________________________________________
+time_distributed_2 (TimeDistrib (None, 96, 1)        57          time_distributed_1[0][0]         
+__________________________________________________________________________________________________
+flatten_1 (Flatten)             (None, 96)           0           time_distributed_2[0][0]         
+==================================================================================================
+Total params: 29,905
+Trainable params: 29,905
+Non-trainable params: 0
+__________________________________________________________________________________________________
+2018-01-21 02:54:43.170656: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-01-21 02:54:44.513027: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.7085
+pciBusID: 0000:03:00.0
+totalMemory: 7.92GiB freeMemory: 7.83GiB
+2018-01-21 02:54:44.513056: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:03:00.0, compute capability: 6.1)
+Epoch 00001: val_loss improved from inf to 0.19963, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+/home/aifb/kabatensorflow/kabatfenv/lib/python3.5/site-packages/keras/engine/topology.py:2344: UserWarning: Layer lstm_1 was passed non-serializable keyword arguments: {'initial_state': [<tf.Tensor 'dense_1/Relu:0' shape=(?, 56) dtype=float32>, <tf.Tensor 'dense_2/Relu:0' shape=(?, 56) dtype=float32>]}. They will not be included in the serialized model (and thus will be missing at deserialization time).
+  str(node.arguments) + '. They will not be included '
+/home/aifb/kabatensorflow/kabatfenv/lib/python3.5/site-packages/keras/engine/topology.py:2344: UserWarning: Layer lstm_2 was passed non-serializable keyword arguments: {'initial_state': [<tf.Tensor 'lstm_1/mul_575:0' shape=(?, 56) dtype=float32>, <tf.Tensor 'lstm_1/add_765:0' shape=(?, 56) dtype=float32>]}. They will not be included in the serialized model (and thus will be missing at deserialization time).
+  str(node.arguments) + '. They will not be included '
+Epoch 00002: val_loss improved from 0.19963 to 0.18023, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00003: val_loss improved from 0.18023 to 0.15826, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00004: val_loss improved from 0.15826 to 0.12940, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00005: val_loss improved from 0.12940 to 0.11583, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00006: val_loss improved from 0.11583 to 0.11309, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00007: val_loss improved from 0.11309 to 0.11259, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00008: val_loss did not improve
+Epoch 00009: val_loss improved from 0.11259 to 0.11186, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00010: val_loss improved from 0.11186 to 0.11147, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00011: val_loss improved from 0.11147 to 0.11106, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00012: val_loss improved from 0.11106 to 0.11058, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00013: val_loss improved from 0.11058 to 0.11007, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00014: val_loss improved from 0.11007 to 0.10960, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00015: val_loss improved from 0.10960 to 0.10903, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00016: val_loss improved from 0.10903 to 0.10827, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00017: val_loss improved from 0.10827 to 0.10757, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00018: val_loss improved from 0.10757 to 0.10717, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00019: val_loss did not improve
+Epoch 00020: val_loss improved from 0.10717 to 0.10617, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00021: val_loss improved from 0.10617 to 0.10572, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00022: val_loss improved from 0.10572 to 0.10546, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00023: val_loss improved from 0.10546 to 0.10527, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00024: val_loss did not improve
+Epoch 00025: val_loss improved from 0.10527 to 0.10475, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00026: val_loss improved from 0.10475 to 0.10451, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00027: val_loss improved from 0.10451 to 0.10257, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00028: val_loss improved from 0.10257 to 0.10151, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00029: val_loss improved from 0.10151 to 0.09692, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00030: val_loss improved from 0.09692 to 0.08916, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00031: val_loss improved from 0.08916 to 0.08686, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00032: val_loss improved from 0.08686 to 0.08479, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00033: val_loss improved from 0.08479 to 0.08353, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00034: val_loss improved from 0.08353 to 0.08249, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00035: val_loss improved from 0.08249 to 0.08181, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00036: val_loss did not improve
+Epoch 00037: val_loss improved from 0.08181 to 0.08159, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00038: val_loss improved from 0.08159 to 0.08129, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00039: val_loss improved from 0.08129 to 0.08023, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00040: val_loss improved from 0.08023 to 0.07984, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00041: val_loss improved from 0.07984 to 0.07984, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00042: val_loss improved from 0.07984 to 0.07908, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00043: val_loss improved from 0.07908 to 0.07860, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00044: val_loss improved from 0.07860 to 0.07830, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00045: val_loss did not improve
+Epoch 00046: val_loss did not improve
+Epoch 00047: val_loss improved from 0.07830 to 0.07814, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00048: val_loss improved from 0.07814 to 0.07796, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00049: val_loss improved from 0.07796 to 0.07765, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00050: val_loss improved from 0.07765 to 0.07727, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00051: val_loss improved from 0.07727 to 0.07702, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00052: val_loss improved from 0.07702 to 0.07669, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00053: val_loss improved from 0.07669 to 0.07644, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00054: val_loss improved from 0.07644 to 0.07630, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00055: val_loss improved from 0.07630 to 0.07626, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00056: val_loss improved from 0.07626 to 0.07548, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00057: val_loss did not improve
+Epoch 00058: val_loss did not improve
+Epoch 00059: val_loss did not improve
+Epoch 00060: val_loss improved from 0.07548 to 0.07542, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00061: val_loss improved from 0.07542 to 0.07482, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00062: val_loss improved from 0.07482 to 0.07477, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00063: val_loss improved from 0.07477 to 0.07436, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00064: val_loss improved from 0.07436 to 0.07428, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00065: val_loss improved from 0.07428 to 0.07394, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00066: val_loss improved from 0.07394 to 0.07349, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00067: val_loss did not improve
+Epoch 00068: val_loss did not improve
+Epoch 00069: val_loss improved from 0.07349 to 0.07302, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00070: val_loss did not improve
+Epoch 00071: val_loss did not improve
+Epoch 00072: val_loss improved from 0.07302 to 0.07268, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00073: val_loss did not improve
+Epoch 00074: val_loss did not improve
+Epoch 00075: val_loss did not improve
+Epoch 00076: val_loss did not improve
+Epoch 00077: val_loss improved from 0.07268 to 0.07242, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00078: val_loss did not improve
+Epoch 00079: val_loss improved from 0.07242 to 0.07222, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00080: val_loss did not improve
+Epoch 00081: val_loss did not improve
+Epoch 00082: val_loss did not improve
+Epoch 00083: val_loss did not improve
+Epoch 00084: val_loss did not improve
+Epoch 00085: val_loss did not improve
+Epoch 00086: val_loss did not improve
+Epoch 00087: val_loss did not improve
+Epoch 00088: val_loss did not improve
+Epoch 00089: val_loss did not improve
+Epoch 00090: val_loss did not improve
+Epoch 00091: val_loss did not improve
+Epoch 00092: val_loss did not improve
+Epoch 00093: val_loss did not improve
+Epoch 00094: val_loss did not improve
+Epoch 00095: val_loss did not improve
+Epoch 00096: val_loss did not improve
+Epoch 00097: val_loss did not improve
+Epoch 00098: val_loss did not improve
+Epoch 00099: val_loss improved from 0.07222 to 0.07221, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00100: val_loss did not improve
+Epoch 00101: val_loss did not improve
+Epoch 00102: val_loss improved from 0.07221 to 0.07120, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00103: val_loss did not improve
+Epoch 00104: val_loss improved from 0.07120 to 0.07029, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00105: val_loss improved from 0.07029 to 0.06945, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00106: val_loss improved from 0.06945 to 0.06880, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00107: val_loss improved from 0.06880 to 0.06836, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00108: val_loss improved from 0.06836 to 0.06806, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00109: val_loss did not improve
+Epoch 00110: val_loss did not improve
+Epoch 00111: val_loss improved from 0.06806 to 0.06794, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00112: val_loss improved from 0.06794 to 0.06748, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00113: val_loss did not improve
+Epoch 00114: val_loss improved from 0.06748 to 0.06742, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00115: val_loss improved from 0.06742 to 0.06709, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00116: val_loss improved from 0.06709 to 0.06698, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00117: val_loss improved from 0.06698 to 0.06695, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00118: val_loss improved from 0.06695 to 0.06680, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00119: val_loss did not improve
+Epoch 00120: val_loss did not improve
+Epoch 00121: val_loss improved from 0.06680 to 0.06664, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00122: val_loss did not improve
+Epoch 00123: val_loss did not improve
+Epoch 00124: val_loss improved from 0.06664 to 0.06641, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00125: val_loss did not improve
+Epoch 00126: val_loss did not improve
+Epoch 00127: val_loss improved from 0.06641 to 0.06609, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00128: val_loss improved from 0.06609 to 0.06607, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00129: val_loss improved from 0.06607 to 0.06588, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00130: val_loss did not improve
+Epoch 00131: val_loss did not improve
+Epoch 00132: val_loss improved from 0.06588 to 0.06587, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00133: val_loss did not improve
+Epoch 00134: val_loss did not improve
+Epoch 00135: val_loss improved from 0.06587 to 0.06506, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00136: val_loss improved from 0.06506 to 0.06463, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00137: val_loss improved from 0.06463 to 0.06437, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00138: val_loss did not improve
+Epoch 00139: val_loss improved from 0.06437 to 0.06426, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00140: val_loss improved from 0.06426 to 0.06381, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00141: val_loss did not improve
+Epoch 00142: val_loss did not improve
+Epoch 00143: val_loss did not improve
+Epoch 00144: val_loss improved from 0.06381 to 0.06345, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00145: val_loss improved from 0.06345 to 0.06332, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00146: val_loss did not improve
+Epoch 00147: val_loss did not improve
+Epoch 00148: val_loss improved from 0.06332 to 0.06324, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00149: val_loss improved from 0.06324 to 0.06303, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00150: val_loss improved from 0.06303 to 0.06297, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00151: val_loss improved from 0.06297 to 0.06292, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00152: val_loss did not improve
+Epoch 00153: val_loss improved from 0.06292 to 0.06277, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00154: val_loss did not improve
+Epoch 00155: val_loss did not improve
+Epoch 00156: val_loss improved from 0.06277 to 0.06264, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00157: val_loss improved from 0.06264 to 0.06253, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00158: val_loss did not improve
+Epoch 00159: val_loss did not improve
+Epoch 00160: val_loss did not improve
+Epoch 00161: val_loss did not improve
+Epoch 00162: val_loss did not improve
+Epoch 00163: val_loss did not improve
+Epoch 00164: val_loss did not improve
+Epoch 00165: val_loss did not improve
+Epoch 00166: val_loss did not improve
+Epoch 00167: val_loss did not improve
+Epoch 00168: val_loss did not improve
+Epoch 00169: val_loss did not improve
+Epoch 00170: val_loss did not improve
+Epoch 00171: val_loss did not improve
+Epoch 00172: val_loss did not improve
+Epoch 00173: val_loss did not improve
+Epoch 00174: val_loss did not improve
+Epoch 00175: val_loss did not improve
+Epoch 00176: val_loss did not improve
+Epoch 00177: val_loss did not improve
+Epoch 00178: val_loss did not improve
+Epoch 00179: val_loss did not improve
+Epoch 00180: val_loss did not improve
+Epoch 00181: val_loss did not improve
+Epoch 00182: val_loss did not improve
+Epoch 00183: val_loss improved from 0.06253 to 0.06229, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00184: val_loss improved from 0.06229 to 0.06222, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00185: val_loss improved from 0.06222 to 0.06215, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00186: val_loss did not improve
+Epoch 00187: val_loss improved from 0.06215 to 0.06186, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00188: val_loss did not improve
+Epoch 00189: val_loss did not improve
+Epoch 00190: val_loss did not improve
+Epoch 00191: val_loss improved from 0.06186 to 0.06175, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00192: val_loss did not improve
+Epoch 00193: val_loss improved from 0.06175 to 0.06153, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00194: val_loss did not improve
+Epoch 00195: val_loss improved from 0.06153 to 0.06149, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00196: val_loss improved from 0.06149 to 0.06148, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00197: val_loss improved from 0.06148 to 0.06128, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00198: val_loss did not improve
+Epoch 00199: val_loss improved from 0.06128 to 0.06127, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00200: val_loss improved from 0.06127 to 0.06120, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00201: val_loss did not improve
+Epoch 00202: val_loss improved from 0.06120 to 0.06113, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00203: val_loss improved from 0.06113 to 0.06096, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00204: val_loss did not improve
+Epoch 00205: val_loss did not improve
+Epoch 00206: val_loss did not improve
+Epoch 00207: val_loss did not improve
+Epoch 00208: val_loss improved from 0.06096 to 0.06077, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00209: val_loss did not improve
+Epoch 00210: val_loss did not improve
+Epoch 00211: val_loss did not improve
+Epoch 00212: val_loss improved from 0.06077 to 0.06071, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00213: val_loss did not improve
+Epoch 00214: val_loss did not improve
+Epoch 00215: val_loss improved from 0.06071 to 0.06058, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00216: val_loss did not improve
+Epoch 00217: val_loss did not improve
+Epoch 00218: val_loss improved from 0.06058 to 0.06047, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00219: val_loss did not improve
+Epoch 00220: val_loss did not improve
+Epoch 00221: val_loss did not improve
+Epoch 00222: val_loss did not improve
+Epoch 00223: val_loss did not improve
+Epoch 00224: val_loss improved from 0.06047 to 0.06036, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00225: val_loss did not improve
+Epoch 00226: val_loss improved from 0.06036 to 0.06014, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00227: val_loss did not improve
+Epoch 00228: val_loss did not improve
+Epoch 00229: val_loss did not improve
+Epoch 00230: val_loss did not improve
+Epoch 00231: val_loss did not improve
+Epoch 00232: val_loss did not improve
+Epoch 00233: val_loss improved from 0.06014 to 0.05999, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00234: val_loss did not improve
+Epoch 00235: val_loss did not improve
+Epoch 00236: val_loss did not improve
+Epoch 00237: val_loss did not improve
+Epoch 00238: val_loss did not improve
+Epoch 00239: val_loss improved from 0.05999 to 0.05991, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00240: val_loss improved from 0.05991 to 0.05976, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00241: val_loss did not improve
+Epoch 00242: val_loss did not improve
+Epoch 00243: val_loss did not improve
+Epoch 00244: val_loss did not improve
+Epoch 00245: val_loss did not improve
+Epoch 00246: val_loss did not improve
+Epoch 00247: val_loss improved from 0.05976 to 0.05964, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00248: val_loss did not improve
+Epoch 00249: val_loss improved from 0.05964 to 0.05960, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00250: val_loss improved from 0.05960 to 0.05949, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00251: val_loss did not improve
+Epoch 00252: val_loss did not improve
+Epoch 00253: val_loss did not improve
+Epoch 00254: val_loss did not improve
+Epoch 00255: val_loss improved from 0.05949 to 0.05942, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00256: val_loss did not improve
+Epoch 00257: val_loss did not improve
+Epoch 00258: val_loss did not improve
+Epoch 00259: val_loss did not improve
+Epoch 00260: val_loss did not improve
+Epoch 00261: val_loss improved from 0.05942 to 0.05927, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00262: val_loss did not improve
+Epoch 00263: val_loss did not improve
+Epoch 00264: val_loss did not improve
+Epoch 00265: val_loss did not improve
+Epoch 00266: val_loss improved from 0.05927 to 0.05926, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00267: val_loss did not improve
+Epoch 00268: val_loss did not improve
+Epoch 00269: val_loss improved from 0.05926 to 0.05918, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00270: val_loss improved from 0.05918 to 0.05918, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00271: val_loss did not improve
+Epoch 00272: val_loss improved from 0.05918 to 0.05908, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00273: val_loss improved from 0.05908 to 0.05899, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00274: val_loss did not improve
+Epoch 00275: val_loss improved from 0.05899 to 0.05897, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00276: val_loss improved from 0.05897 to 0.05894, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00277: val_loss did not improve
+Epoch 00278: val_loss did not improve
+Epoch 00279: val_loss did not improve
+Epoch 00280: val_loss improved from 0.05894 to 0.05891, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00281: val_loss did not improve
+Epoch 00282: val_loss did not improve
+Epoch 00283: val_loss did not improve
+Epoch 00284: val_loss did not improve
+Epoch 00285: val_loss improved from 0.05891 to 0.05879, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00286: val_loss did not improve
+Epoch 00287: val_loss did not improve
+Epoch 00288: val_loss did not improve
+Epoch 00289: val_loss improved from 0.05879 to 0.05877, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00290: val_loss did not improve
+Epoch 00291: val_loss did not improve
+Epoch 00292: val_loss did not improve
+Epoch 00293: val_loss did not improve
+Epoch 00294: val_loss improved from 0.05877 to 0.05874, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00295: val_loss improved from 0.05874 to 0.05872, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00296: val_loss did not improve
+Epoch 00297: val_loss did not improve
+Epoch 00298: val_loss did not improve
+Epoch 00299: val_loss improved from 0.05872 to 0.05858, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00300: val_loss did not improve
+Epoch 00301: val_loss improved from 0.05858 to 0.05849, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00302: val_loss did not improve
+Epoch 00303: val_loss did not improve
+Epoch 00304: val_loss did not improve
+Epoch 00305: val_loss did not improve
+Epoch 00306: val_loss did not improve
+Epoch 00307: val_loss did not improve
+Epoch 00308: val_loss did not improve
+Epoch 00309: val_loss did not improve
+Epoch 00310: val_loss improved from 0.05849 to 0.05833, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00311: val_loss did not improve
+Epoch 00312: val_loss did not improve
+Epoch 00313: val_loss improved from 0.05833 to 0.05831, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00314: val_loss did not improve
+Epoch 00315: val_loss improved from 0.05831 to 0.05828, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00316: val_loss did not improve
+Epoch 00317: val_loss did not improve
+Epoch 00318: val_loss did not improve
+Epoch 00319: val_loss improved from 0.05828 to 0.05817, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00320: val_loss did not improve
+Epoch 00321: val_loss did not improve
+Epoch 00322: val_loss did not improve
+Epoch 00323: val_loss did not improve
+Epoch 00324: val_loss did not improve
+Epoch 00325: val_loss did not improve
+Epoch 00326: val_loss did not improve
+Epoch 00327: val_loss did not improve
+Epoch 00328: val_loss did not improve
+Epoch 00329: val_loss did not improve
+Epoch 00330: val_loss improved from 0.05817 to 0.05802, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00331: val_loss did not improve
+Epoch 00332: val_loss did not improve
+Epoch 00333: val_loss improved from 0.05802 to 0.05782, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00334: val_loss did not improve
+Epoch 00335: val_loss did not improve
+Epoch 00336: val_loss improved from 0.05782 to 0.05774, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00337: val_loss did not improve
+Epoch 00338: val_loss did not improve
+Epoch 00339: val_loss improved from 0.05774 to 0.05767, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00340: val_loss did not improve
+Epoch 00341: val_loss did not improve
+Epoch 00342: val_loss did not improve
+Epoch 00343: val_loss did not improve
+Epoch 00344: val_loss did not improve
+Epoch 00345: val_loss did not improve
+Epoch 00346: val_loss did not improve
+Epoch 00347: val_loss did not improve
+Epoch 00348: val_loss improved from 0.05767 to 0.05765, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00349: val_loss improved from 0.05765 to 0.05746, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00350: val_loss did not improve
+Epoch 00351: val_loss did not improve
+Epoch 00352: val_loss improved from 0.05746 to 0.05742, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00353: val_loss did not improve
+Epoch 00354: val_loss did not improve
+Epoch 00355: val_loss improved from 0.05742 to 0.05737, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00356: val_loss did not improve
+Epoch 00357: val_loss did not improve
+Epoch 00358: val_loss did not improve
+Epoch 00359: val_loss did not improve
+Epoch 00360: val_loss did not improve
+Epoch 00361: val_loss did not improve
+Epoch 00362: val_loss did not improve
+Epoch 00363: val_loss did not improve
+Epoch 00364: val_loss did not improve
+Epoch 00365: val_loss improved from 0.05737 to 0.05717, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00366: val_loss did not improve
+Epoch 00367: val_loss did not improve
+Epoch 00368: val_loss did not improve
+Epoch 00369: val_loss did not improve
+Epoch 00370: val_loss did not improve
+Epoch 00371: val_loss did not improve
+Epoch 00372: val_loss did not improve
+Epoch 00373: val_loss improved from 0.05717 to 0.05715, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00374: val_loss did not improve
+Epoch 00375: val_loss did not improve
+Epoch 00376: val_loss did not improve
+Epoch 00377: val_loss improved from 0.05715 to 0.05711, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00378: val_loss improved from 0.05711 to 0.05705, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00379: val_loss did not improve
+Epoch 00380: val_loss did not improve
+Epoch 00381: val_loss did not improve
+Epoch 00382: val_loss did not improve
+Epoch 00383: val_loss did not improve
+Epoch 00384: val_loss improved from 0.05705 to 0.05696, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00385: val_loss did not improve
+Epoch 00386: val_loss did not improve
+Epoch 00387: val_loss did not improve
+Epoch 00388: val_loss did not improve
+Epoch 00389: val_loss did not improve
+Epoch 00390: val_loss did not improve
+Epoch 00391: val_loss improved from 0.05696 to 0.05677, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00392: val_loss did not improve
+Epoch 00393: val_loss did not improve
+Epoch 00394: val_loss did not improve
+Epoch 00395: val_loss did not improve
+Epoch 00396: val_loss did not improve
+Epoch 00397: val_loss improved from 0.05677 to 0.05675, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00398: val_loss did not improve
+Epoch 00399: val_loss improved from 0.05675 to 0.05672, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00400: val_loss improved from 0.05672 to 0.05669, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00401: val_loss did not improve
+Epoch 00402: val_loss did not improve
+Epoch 00403: val_loss did not improve
+Epoch 00404: val_loss did not improve
+Epoch 00405: val_loss did not improve
+Epoch 00406: val_loss did not improve
+Epoch 00407: val_loss did not improve
+Epoch 00408: val_loss improved from 0.05669 to 0.05663, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00409: val_loss did not improve
+Epoch 00410: val_loss improved from 0.05663 to 0.05656, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00411: val_loss did not improve
+Epoch 00412: val_loss did not improve
+Epoch 00413: val_loss did not improve
+Epoch 00414: val_loss did not improve
+Epoch 00415: val_loss did not improve
+Epoch 00416: val_loss did not improve
+Epoch 00417: val_loss did not improve
+Epoch 00418: val_loss did not improve
+Epoch 00419: val_loss improved from 0.05656 to 0.05637, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00420: val_loss improved from 0.05637 to 0.05626, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00421: val_loss did not improve
+Epoch 00422: val_loss did not improve
+Epoch 00423: val_loss did not improve
+Epoch 00424: val_loss did not improve
+Epoch 00425: val_loss did not improve
+Epoch 00426: val_loss did not improve
+Epoch 00427: val_loss did not improve
+Epoch 00428: val_loss did not improve
+Epoch 00429: val_loss did not improve
+Epoch 00430: val_loss did not improve
+Epoch 00431: val_loss did not improve
+Epoch 00432: val_loss did not improve
+Epoch 00433: val_loss did not improve
+Epoch 00434: val_loss did not improve
+Epoch 00435: val_loss did not improve
+Epoch 00436: val_loss did not improve
+Epoch 00437: val_loss did not improve
+Epoch 00438: val_loss improved from 0.05626 to 0.05606, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00439: val_loss did not improve
+Epoch 00440: val_loss did not improve
+Epoch 00441: val_loss did not improve
+Epoch 00442: val_loss did not improve
+Epoch 00443: val_loss did not improve
+Epoch 00444: val_loss did not improve
+Epoch 00445: val_loss did not improve
+Epoch 00446: val_loss did not improve
+Epoch 00447: val_loss improved from 0.05606 to 0.05603, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00448: val_loss did not improve
+Epoch 00449: val_loss improved from 0.05603 to 0.05599, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00450: val_loss improved from 0.05599 to 0.05594, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00451: val_loss did not improve
+Epoch 00452: val_loss improved from 0.05594 to 0.05581, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00453: val_loss did not improve
+Epoch 00454: val_loss did not improve
+Epoch 00455: val_loss improved from 0.05581 to 0.05575, saving model to /tmp/tmpo79xm264/bestmodel0.hdf5
+Epoch 00456: val_loss did not improve
+Epoch 00457: val_loss did not improve
+Epoch 00458: val_loss did not improve
+Epoch 00459: val_loss did not improve
+Epoch 00460: val_loss did not improve
+Epoch 00461: val_loss did not improve
+Epoch 00462: val_loss did not improve
+Epoch 00463: val_loss did not improve
+Epoch 00464: val_loss did not improve
+Epoch 00465: val_loss did not improve
+Epoch 00466: val_loss did not improve
+Epoch 00467: val_loss did not improve
+Epoch 00468: val_loss did not improve
+Epoch 00469: val_loss did not improve
+Epoch 00470: val_loss did not improve
+Epoch 00471: val_loss did not improve
+Epoch 00472: val_loss did not improve
+Epoch 00473: val_loss did not improve
+Epoch 00474: val_loss did not improve
+Epoch 00475: val_loss did not improve
+Epoch 00476: val_loss did not improve
+Epoch 00477: val_loss did not improve
+Epoch 00478: val_loss did not improve
+Epoch 00479: val_loss did not improve
+Epoch 00480: val_loss did not improve
+Epoch 00481: val_loss did not improve
+Epoch 00482: val_loss did not improve
+Epoch 00483: val_loss did not improve
+Epoch 00484: val_loss did not improve
+Epoch 00485: val_loss did not improve
+Epoch 00486: val_loss did not improve
+Epoch 00487: val_loss did not improve
+Epoch 00488: val_loss did not improve
+Epoch 00489: val_loss did not improve
+Epoch 00490: val_loss did not improve
+Epoch 00491: val_loss did not improve
+Epoch 00492: val_loss did not improve
+Epoch 00493: val_loss did not improve
+Epoch 00494: val_loss did not improve
+Epoch 00495: val_loss did not improve
+Epoch 00496: val_loss did not improve
+Epoch 00497: val_loss did not improve
+Epoch 00498: val_loss did not improve
+Epoch 00499: val_loss did not improve
+Epoch 00500: val_loss did not improve
+Epoch 00501: val_loss did not improve
+Epoch 00502: val_loss did not improve
+Epoch 00503: val_loss did not improve
+Epoch 00504: val_loss did not improve
+Epoch 00505: val_loss did not improve
+Epoch 00506: val_loss did not improve
+Epoch 00507: val_loss did not improve
+Epoch 00508: val_loss did not improve
+Epoch 00509: val_loss did not improve
+Epoch 00510: val_loss did not improve
+Epoch 00511: val_loss did not improve
+Epoch 00512: val_loss did not improve
+Epoch 00513: val_loss did not improve
+Epoch 00514: val_loss did not improve
+Epoch 00515: val_loss did not improve
+Epoch 00516: val_loss did not improve
+Epoch 00517: val_loss did not improve
+Epoch 00518: val_loss did not improve
+Epoch 00519: val_loss did not improve
+Epoch 00520: val_loss did not improve
+Epoch 00521: val_loss did not improve
+Epoch 00522: val_loss did not improve
+Epoch 00523: val_loss did not improve
+Epoch 00524: val_loss did not improve
+Epoch 00525: val_loss did not improve
+Epoch 00526: val_loss did not improve
+Epoch 00527: val_loss did not improve
+Epoch 00528: val_loss did not improve
+Epoch 00529: val_loss did not improve
+Epoch 00530: val_loss did not improve
+Epoch 00531: val_loss did not improve
+Epoch 00532: val_loss did not improve
+Epoch 00533: val_loss did not improve
+Epoch 00534: val_loss did not improve
+Epoch 00535: val_loss did not improve
+Epoch 00536: val_loss did not improve
+Epoch 00537: val_loss did not improve
+Epoch 00538: val_loss did not improve
+Epoch 00539: val_loss did not improve
+Epoch 00540: val_loss did not improve
+Epoch 00541: val_loss did not improve
+Epoch 00542: val_loss did not improve
+Epoch 00543: val_loss did not improve
+Epoch 00544: val_loss did not improve
+Epoch 00545: val_loss did not improve
+Epoch 00546: val_loss did not improve
+Epoch 00547: val_loss did not improve
+Epoch 00548: val_loss did not improve
+Epoch 00549: val_loss did not improve
+Epoch 00550: val_loss did not improve
+Epoch 00551: val_loss did not improve
+Epoch 00552: val_loss did not improve
+Epoch 00553: val_loss did not improve
+Epoch 00554: val_loss did not improve
+Epoch 00555: val_loss did not improve
+INFO - sacred_rnn_lstm2_representation - Result: 0.24973315000534058
+INFO - sacred_rnn_lstm2_representation - Completed after 0:25:33

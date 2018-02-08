@@ -1,0 +1,83 @@
+{
+  "artifacts": [],
+  "command": "my_experiment",
+  "experiment": {
+    "base_dir": "/home/aifb/kabatensorflow/flexibility-constraint-learning/neuralnets/repair",
+    "dependencies": [
+      "Keras==2.1.1",
+      "matplotlib==2.1.0",
+      "numpy==1.13.3",
+      "sacred==0.7.2",
+      "scikit-learn==0.19.1"
+    ],
+    "mainfile": "sacred_predict_zero.py",
+    "name": "sacred_predict_zero",
+    "repositories": [],
+    "sources": [
+      [
+        "sacred_predict_zero.py",
+        "_sources/sacred_predict_zero_5044d1998bc431ac2357a7afbd749b6a.py"
+      ]
+    ]
+  },
+  "heartbeat": "2018-01-11T18:10:56.431728",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) CPU E5-1620 v4 @ 3.50GHz",
+    "gpus": {
+      "driver_version": "384.111",
+      "gpus": [
+        {
+          "model": "GeForce GTX 1070",
+          "persistence_mode": false,
+          "total_memory": 8108
+        },
+        {
+          "model": "GeForce GTX 1070",
+          "persistence_mode": false,
+          "total_memory": 8114
+        }
+      ]
+    },
+    "hostname": "aifb-ea-deeplearning2",
+    "os": [
+      "Linux",
+      "Linux-4.4.0-98-generic-x86_64-with-Ubuntu-16.04-xenial"
+    ],
+    "python_version": "3.5.2"
+  },
+  "meta": {
+    "command": "my_experiment",
+    "options": {
+      "--beat_interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": "../../data/experiments/repair",
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print_config": false,
+      "--priority": null,
+      "--queue": false,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "dataset_filename=../../data/training/2018-01-11T19:08:00_repair_15min_bess_chp.npy"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": 0.5421742796897888,
+  "start_time": "2018-01-11T18:10:56.343704",
+  "status": "COMPLETED",
+  "stop_time": "2018-01-11T18:10:56.430928"
+}

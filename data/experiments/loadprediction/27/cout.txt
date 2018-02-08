@@ -1,0 +1,30 @@
+INFO - sacred_ann_fc2_prices - Running command 'my_experiment'
+INFO - sacred_ann_fc2_prices - Started run with ID "27"
+loaded dataset ../../data/training/2018-01-11T01:57:00_price-based_15min_bess.npy
+training data has shape (871, 29) -> (871, 96) ; mean 197.3251953125 var 46.20633316040039
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_1 (Dense)              (None, 96)                2880      
+_________________________________________________________________
+dense_2 (Dense)              (None, 64)                6208      
+_________________________________________________________________
+dense_3 (Dense)              (None, 64)                4160      
+_________________________________________________________________
+dense_4 (Dense)              (None, 64)                4160      
+_________________________________________________________________
+dense_5 (Dense)              (None, 96)                6240      
+=================================================================
+Total params: 23,648
+Trainable params: 23,648
+Non-trainable params: 0
+_________________________________________________________________
+None
+2018-01-20 22:48:54.206790: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2018-01-20 22:48:55.615383: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1030] Found device 0 with properties: 
+name: GeForce GTX 1070 major: 6 minor: 1 memoryClockRate(GHz): 1.7085
+pciBusID: 0000:03:00.0
+totalMemory: 7.92GiB freeMemory: 7.83GiB
+2018-01-20 22:48:55.615414: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1120] Creating TensorFlow device (/device:GPU:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:03:00.0, compute capability: 6.1)
+INFO - sacred_ann_fc2_prices - Result: 2.5416674613952637
+INFO - sacred_ann_fc2_prices - Completed after 0:00:54

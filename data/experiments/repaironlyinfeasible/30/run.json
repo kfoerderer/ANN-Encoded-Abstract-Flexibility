@@ -1,0 +1,86 @@
+{
+  "artifacts": [
+    "history.png",
+    "model0.hdf5"
+  ],
+  "command": "my_experiment",
+  "experiment": {
+    "base_dir": "/home/aifb/kabatensorflow/flexibility-constraint-learning/neuralnets/repair",
+    "dependencies": [
+      "Keras==2.1.1",
+      "matplotlib==2.1.0",
+      "numpy==1.13.3",
+      "sacred==0.7.2",
+      "scikit-learn==0.19.1"
+    ],
+    "mainfile": "sacred_ann_fc2_representation.py",
+    "name": "sacred_ann_fc2_representation",
+    "repositories": [],
+    "sources": [
+      [
+        "sacred_ann_fc2_representation.py",
+        "_sources/sacred_ann_fc2_representation_5e5276a7381f0312bc5312116049766c.py"
+      ]
+    ]
+  },
+  "heartbeat": "2018-01-21T08:26:59.400145",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) CPU E5-1620 v4 @ 3.50GHz",
+    "gpus": {
+      "driver_version": "384.111",
+      "gpus": [
+        {
+          "model": "GeForce GTX 1070",
+          "persistence_mode": false,
+          "total_memory": 8108
+        },
+        {
+          "model": "GeForce GTX 1070",
+          "persistence_mode": false,
+          "total_memory": 8114
+        }
+      ]
+    },
+    "hostname": "aifb-ea-deeplearning2",
+    "os": [
+      "Linux",
+      "Linux-4.4.0-98-generic-x86_64-with-Ubuntu-16.04-xenial"
+    ],
+    "python_version": "3.5.2"
+  },
+  "meta": {
+    "command": "my_experiment",
+    "options": {
+      "--beat_interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": "../../data/experiments/repaironlyinfeasible",
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print_config": false,
+      "--priority": null,
+      "--queue": false,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "dataset_filename=../../data/training/2018-01-18T14:47:00_repair_only_infeasible_15min_bess_chp.npy"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": 0.3375454843044281,
+  "start_time": "2018-01-21T08:25:51.787774",
+  "status": "COMPLETED",
+  "stop_time": "2018-01-21T08:26:59.399340"
+}

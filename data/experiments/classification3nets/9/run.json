@@ -1,0 +1,88 @@
+{
+  "artifacts": [
+    "history.png",
+    "model0.hdf5",
+    "model1.hdf5",
+    "model2.hdf5"
+  ],
+  "command": "my_experiment",
+  "experiment": {
+    "base_dir": "/home/aifb/kabatensorflow/flexibility-constraint-learning/neuralnets/classification3nets",
+    "dependencies": [
+      "Keras==2.1.1",
+      "matplotlib==2.1.0",
+      "numpy==1.13.3",
+      "sacred==0.7.2",
+      "scikit-learn==0.19.1"
+    ],
+    "mainfile": "sacred_rnn_lstm_3nets.py",
+    "name": "sacred_rnn_lstm_3nets",
+    "repositories": [],
+    "sources": [
+      [
+        "sacred_rnn_lstm_3nets.py",
+        "_sources/sacred_rnn_lstm_3nets_d22b08a034428528e7675081738f3e38.py"
+      ]
+    ]
+  },
+  "heartbeat": "2018-01-11T03:33:03.535062",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Xeon(R) CPU E5-1620 v4 @ 3.50GHz",
+    "gpus": {
+      "driver_version": "384.111",
+      "gpus": [
+        {
+          "model": "GeForce GTX 1070",
+          "persistence_mode": false,
+          "total_memory": 8108
+        },
+        {
+          "model": "GeForce GTX 1070",
+          "persistence_mode": false,
+          "total_memory": 8114
+        }
+      ]
+    },
+    "hostname": "aifb-ea-deeplearning2",
+    "os": [
+      "Linux",
+      "Linux-4.4.0-98-generic-x86_64-with-Ubuntu-16.04-xenial"
+    ],
+    "python_version": "3.5.2"
+  },
+  "meta": {
+    "command": "my_experiment",
+    "options": {
+      "--beat_interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": "../../data/experiments/classification3nets",
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print_config": false,
+      "--priority": null,
+      "--queue": false,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "dataset_filename=../../data/training/2018-01-09T18:26:00_classification_15min_chp.npy"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": 0.9814334198442803,
+  "start_time": "2018-01-11T02:49:20.965720",
+  "status": "COMPLETED",
+  "stop_time": "2018-01-11T03:33:03.534078"
+}

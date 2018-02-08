@@ -1,0 +1,11 @@
+{
+  "batch_size": 1024,
+  "dataset_filename": "../../data/training/2018-01-18T17:57:00_representation_MT_15min_chp.npy",
+  "epochs": 5000,
+  "scaling_factor_y": 1,
+  "seed": 1924,
+  "test_split": 0.2,
+  "validation_split": 0.1,
+  "verbose_modelcheckpointer": 0,
+  "verbose_training": 0
+}
