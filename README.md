@@ -1,6 +1,8 @@
 # ANN-Encoded-Abstract-Flexibility
 The repository for neural models from paper: "tbd"
 
+Please note that you need [Git LFS](https://git-lfs.github.com/) to download the dataset during cloning.
+
 ## Contents
 
 * [neuralnets](neuralnets): the neural network definitions for each usage patterns. There is a run script in each directory.
@@ -22,7 +24,7 @@ The repository for neural models from paper: "tbd"
 	* [real_eshl_chp](data/real_eshl_chp): load profiles of the CHP from the [KIT Energy Smart Home Lab](http://organicsmarthome.org/)
     * [generated_dataset](data/generated_dataset): generated dataset of CHP and/or BESS load profiles
 	* [training](data/training): input/output-vectors converted from [generated_dataset](data/generated_dataset) used for training and evaluating the neural networks
-* [Experiment Results.txt](Experiment Results.txt): summary of our experiment results
+* [Experiment_Results.txt](Experiment_Results.txt): summary of our experiment results
 * [Real_ESHL_CHP_Evaluation.ipynb](Real_ESHL_CHP_Evaluation.ipynb): validation of the best classification model using load profiles of a real CHP
 
 ## How to run the experiments
