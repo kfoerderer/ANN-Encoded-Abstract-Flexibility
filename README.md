@@ -1,7 +1,7 @@
 # ANN-Encoded-Abstract-Flexibility
-The repository for neural models from paper: "tbd"
+The repository for neural models from paper: *Modeling Flexibility Using Artificial Neural Networks*, 2018, tbd
 
-Please note that you need [Git LFS](https://git-lfs.github.com/) to download the dataset during cloning.
+**Please note that you need [Git LFS](https://git-lfs.github.com/) to download the dataset during cloning.**
 
 ## Contents
 
@@ -35,6 +35,7 @@ $ cd data/generated_dataset; unzip dataset.zip; cd ../..
 ```
 
 2. Create a Python 3 VirtualEnv and install the dependencies
+**Please note that the software versions of the dependencies may be outdated since the requirements match the exact versions we used during our experiments.**
 ```
 $ virtualenv --python=python3 venv
 $ source venv/bin/activate
