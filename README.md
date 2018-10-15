@@ -1,5 +1,6 @@
 # ANN-Encoded-Abstract-Flexibility
-The repository for neural models from paper: *Modeling Flexibility Using Artificial Neural Networks*, 2018, tbd
+
+Here, in this repository, you find the data and neural models tested in the paper: [*Modeling flexibility using artificial neural networks*, 2018](https://link.springer.com/article/10.1186/s42162-018-0024-4)
 
 **Please note that you need [Git LFS](https://git-lfs.github.com/) to download the dataset during cloning.**
 
